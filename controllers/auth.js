@@ -6,7 +6,7 @@ module.exports = {
       console.log(error);
     }
   },
-  getsignupPage: async (req, res) => {
+  getSignupPage: async (req, res) => {
     try {
       res.render("signup.ejs");
     } catch (error) {

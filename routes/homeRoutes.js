@@ -9,6 +9,6 @@ const authController = require("../controllers/auth.js");
 
 homeRoutes.get("/", homeController.getHomePage);
 homeRoutes.get("/login", authController.getLoginPage);
-homeRoutes.get("/signup", authController.getsignupPage);
+homeRoutes.get("/signup", authController.getSignupPage);
 
 module.exports = homeRoutes;
