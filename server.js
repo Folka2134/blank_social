@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+// const flash = require("express-flash");
 const homeRoutes = require("./routes/homeRoutes");
 const userRoutes = require("./routes/userRoutes");
 
@@ -24,6 +25,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// app.use(flash());
 
 // Routes
 app.use("/", homeRoutes);

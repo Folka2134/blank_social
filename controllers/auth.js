@@ -1,4 +1,5 @@
 const validator = require("validator");
+const User = require("../models/userModel");
 
 module.exports = {
   getLoginPage: async (req, res) => {
@@ -26,16 +27,18 @@ module.exports = {
     if (req.body.password !== req.body.confirmPassword)
       validationErrors.push({ msg: "Passwords do not match" });
 
-    if (validationErrors.length) {
+    /*     if (validationErrors.length) {
       req.flash("errors", validationErrors);
       return res.redirect("../signup");
-    }
+    } */
     req.body.email = validator.normalizeEmail(req.body.email, {
       gmail_remove_dots: false,
     });
 
     const user = new User({
       userName: req.body.userName,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       email: req.body.email,
       password: req.body.password,
     });
@@ -46,22 +49,22 @@ module.exports = {
         if (err) {
           return next(err);
         }
-        if (existingUser) {
-          req.flash("errors", {
-            msg: "Account with that email address or username already exists.",
-          });
-          return res.redirect("../signup");
-        }
+        // if (existingUser) {
+        //   req.flash("errors", {
+        //     msg: "Account with that email address or username already exists.",
+        //   });
+        //   return res.redirect("../signup");
+        // }
         user.save((err) => {
           if (err) {
             return next(err);
           }
-          req.logIn(user, (err) => {
-            if (err) {
-              return next(err);
-            }
-            res.redirect("/todos");
-          });
+          // req.logIn(user, (err) => {
+          //   if (err) {
+          //     return next(err);
+          //   }
+          //   res.redirect("/todos");
+          // });
         });
       }
     );
