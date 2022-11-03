@@ -15,7 +15,7 @@ homeRoutes.get("/signup", authController.getSignupPage);
   POST
 */
 
-homeRoutes.post("/login", authController.postLogin);
+// homeRoutes.post("/login", authController.postLogin);
 homeRoutes.post("/signup", authController.postSignup);
 
 module.exports = homeRoutes;
