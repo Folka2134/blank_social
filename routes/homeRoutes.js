@@ -1,13 +1,14 @@
 const express = require("express");
 const homeRoutes = express.Router();
 const homeController = require("../controllers/homeController.js");
+const authController = require("../controllers/auth.js");
 
 /*
   GET
 */
 
 homeRoutes.get("/", homeController.getHomePage);
-homeRoutes.get("/login", homeController.getLoginPage);
-homeRoutes.get("/signup", homeController.getsignupPage);
+homeRoutes.get("/login", authController.getLoginPage);
+homeRoutes.get("/signup", authController.getsignupPage);
 
 module.exports = homeRoutes;
