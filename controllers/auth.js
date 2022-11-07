@@ -29,7 +29,6 @@ module.exports = {
       validationErrors.push({ msg: "Passwords do not match" });
 
     if (validationErrors.length) {
-      // console.log(validationErrors);
       req.flash("errors", validationErrors);
       return res.redirect("../signup");
     }
@@ -55,9 +54,6 @@ module.exports = {
           req.flash("errors", {
             msg: "Account with that email address or username already exists.",
           });
-          // console.log(
-          //   "Account with that email address or username already exists."
-          // );
           return res.redirect("../signup");
         }
         user.save((err) => {
@@ -83,7 +79,6 @@ module.exports = {
       validationErrors.push({ msg: "Password cannot be blank." });
 
     if (validationErrors.length) {
-      // console.log(validationErrors);
       req.flash("errors", validationErrors);
       return res.redirect("/login");
     }
@@ -96,7 +91,6 @@ module.exports = {
         return next(err);
       }
       if (!user) {
-        // console.log("no user found");
         req.flash("errors", info);
         return res.redirect("/login");
       }
@@ -104,7 +98,6 @@ module.exports = {
         if (err) {
           return next(err);
         }
-        // console.log("Success! You are logged in");
         req.flash("success", { msg: "Success! You are logged in." });
         res.redirect(req.session.returnTo || "/feed");
       });
