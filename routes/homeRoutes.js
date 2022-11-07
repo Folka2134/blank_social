@@ -10,12 +10,13 @@ const authController = require("../controllers/auth.js");
 homeRoutes.get("/", homeController.getHomePage);
 homeRoutes.get("/login", authController.getLoginPage);
 homeRoutes.get("/signup", authController.getSignupPage);
+homeRoutes.get("/logout", authController.logout);
 
 /*
   POST
 */
 
-// homeRoutes.post("/login", authController.postLogin);
+homeRoutes.post("/login", authController.postLogin);
 homeRoutes.post("/signup", authController.postSignup);
 
 module.exports = homeRoutes;
