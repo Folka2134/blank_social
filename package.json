@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
-    "tailwind:css": "postcss src/tailwind.css -o public/css/styles.css"
+    "tailwind:css": "postcss src/tailwind.css -o public/css/styles.css --watch"
   },
   "repository": {
     "type": "git",
