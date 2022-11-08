@@ -4,6 +4,7 @@ const passport = require("passport");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("express-flash");
+const ejs = require("ejs");
 const connectDB = require("./config/database");
 const homeRoutes = require("./routes/homeRoutes");
 const userRoutes = require("./routes/userRoutes");
