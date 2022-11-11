@@ -548,6 +548,9 @@ video {
 .w-24 {
   width: 6rem;
 }
+.w-\[96\] {
+  width: 96;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -708,6 +711,15 @@ video {
 .hover\:border-green-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(134 239 172 / var(--tw-border-opacity));
+}
+
+
+
+@media (min-width: 640px) {
+
+  .sm\:w-\[600px\] {
+    width: 600px;
+  }
 }
 
 
