@@ -4,30 +4,70 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Blank Social</h1>
-    <main>
-      <h3>Sign-up</h3>
-      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-      <div class="alert alert-danger"><%= el.msg %></div>
-      <% }) %> <% } %>
-      <form action="/signup" method="POST">
-        <input type="text" name="userName" placeholder="username" />
-        <input type="text" name="firstName" placeholder="first name" />
-        <input type="text" name="lastName" placeholder="last name" />
-        <input type="text" name="email" placeholder="email" />
-        <input type="text" name="dob" placeholder="Date of Birth" />
-        <input type="text" name="password" placeholder="password" />
-        <input
-          type="text"
-          name="confirmPassword"
-          placeholder="confirm-password"
-        />
-        <input type="submit" value="Submit" />
-      </form>
-      <a href="/">back</a>
+    <main class="h-screen w-full flex flex-col justify-center items-center">
+      <div class="flex flex-col p-32 border-2 border-gray-200">
+        <h3 class="mb-6 text-red-600 text-3xl self-center">Sign-up</h3>
+        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
+        %>
+        <div class="mt-2 text-red-500"><%= el.msg %></div>
+        <% }) %> <% } %>
+        <div class="flex flex-col mt-2">
+          <form class="flex flex-col" action="/signup" method="POST">
+            <input
+              class="m-2 p-2"
+              type="text"
+              name="userName"
+              placeholder="username"
+            />
+            <input
+              class="m-2 p-2"
+              type="text"
+              name="firstName"
+              placeholder="first name"
+            />
+            <input
+              class="m-2 p-2"
+              type="text"
+              name="lastName"
+              placeholder="last name"
+            />
+            <input
+              class="m-2 p-2"
+              type="text"
+              name="email"
+              placeholder="email"
+            />
+            <input
+              class="m-2 p-2"
+              type="text"
+              name="dob"
+              placeholder="Date of Birth"
+            />
+            <input
+              class="m-2 p-2"
+              type="text"
+              name="password"
+              placeholder="password"
+            />
+            <input
+              class="m-2 p-2"
+              type="text"
+              name="confirmPassword"
+              placeholder="confirm-password"
+            />
+            <input
+              class="border-2 border-grey-200 p-1 px-3 hover:border-green-300 hover:cursor-pointer rounded-md transition-colors"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </div>
+        <a class="hover:animate-pulse duration-75" href="/">back</a>
+      </div>
     </main>
   </body>
 </html>
