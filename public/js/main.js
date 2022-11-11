@@ -3,6 +3,7 @@ const createPostBtn = document.querySelector(".openModal");
 const closeBtn = document.querySelector(".close");
 const body = document.querySelector("main");
 const nav = document.querySelector("nav");
+const imgInput = document.querySelector("#img_upload");
 
 createPostBtn.addEventListener("click", () => {
   modal.style.display = "block";
@@ -17,3 +18,10 @@ window.addEventListener("click", (event) => {
     modal.style.display = "none";
   }
 });
+
+imgInput.onchange = (event) => {
+  const [file] = imgInput.files;
+  if (file) {
+    img_preview.src = URL.createObjectURL(file);
+  }
+};
