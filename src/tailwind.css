@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.postModal {
-}
-
 .postModal > .content {
   background-color: #fefefe;
   /* margin: 15% auto; 15% from the top and centered */
@@ -13,12 +10,7 @@
   /* width: 80%; Could be more or less, depending on screen size */
 }
 
-.content > .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+
 
 .close:hover,
 .close:focus {

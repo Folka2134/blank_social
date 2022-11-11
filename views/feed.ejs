@@ -8,21 +8,27 @@
     <title>Document</title>
   </head>
   <body class="flex flex-col">
-    <nav class="flex justify-between items-center h-12 px-12 bg-purple-500">
+    <nav
+      class="absolute flex justify-between items-center h-12 w-screen px-12 bg-purple-500"
+    >
       <h1>Blank Social</h1>
       <div>
         <button class="mr-2 openModal" id="">Create Post</button>
         <a href="/logout">logout</a>
       </div>
     </nav>
-    <main class="flex justify-center mt-12">
+    <main class="flex flex-col items-center h-screen pt-12">
       <h3>User feed</h3>
     </main>
-    <div class="postModal z-10 w-96 md:w-[600px] lg:w-[800px] self-center">
+    <div
+      class="postModal hidden absolute top-36 z-10 w-96 md:w-[600px] lg:w-[800px] self-center"
+    >
       <div class="content">
-        <span class="close">&times</span>
-        <h3>Create Post</h3>
-        <p>Some text in the Modal..</p>
+        <span class="close font-bold text-2xl float-right">&times</span>
+        <div>
+          <h3>Create Post</h3>
+          <p>Some text in the Modal..</p>
+        </div>
       </div>
     </div>
 
