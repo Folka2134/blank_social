@@ -468,6 +468,9 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.z-10 {
+  z-index: 10;
+}
 .m-2 {
   margin: 0.5rem;
 }
@@ -503,6 +506,9 @@ video {
 }
 .h-screen {
   height: 100vh;
+}
+.w-96 {
+  width: 24rem;
 }
 .w-full {
   width: 100%;
@@ -593,21 +599,14 @@ video {
 }
 
 .postModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
 }
 
 .postModal > .content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  /* margin: 15% auto; 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  /* width: 80%; Could be more or less, depending on screen size */
 }
 
 .content > .close {
@@ -642,4 +641,30 @@ video {
 .hover\:border-green-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(134 239 172 / var(--tw-border-opacity));
+}
+
+@media (min-width: 768px) {
+
+  .md\:w-\[500px\] {
+    width: 500px;
+  }
+
+  .md\:w-\[800px\] {
+    width: 800px;
+  }
+
+  .md\:w-\[600px\] {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .lg\:w-\[500px\] {
+    width: 500px;
+  }
+
+  .lg\:w-\[800px\] {
+    width: 800px;
+  }
 }
