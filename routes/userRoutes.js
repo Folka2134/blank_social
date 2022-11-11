@@ -7,5 +7,10 @@ const userController = require("../controllers/userController.js");
 */
 
 userRoutes.get("/", userController.getFeedPage);
+userRoutes.get("/createPost", userController.getCreatePost);
+
+/* 
+  POST
+*/
 
 module.exports = userRoutes;

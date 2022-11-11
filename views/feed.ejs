@@ -11,12 +11,21 @@
     <nav class="flex justify-between items-center h-12 px-12 bg-purple-500">
       <h1>Blank Social</h1>
       <div>
-        <a class="mr-2" href="/logout">Create Post</a>
+        <button class="mr-2 openModal" id="">Create Post</button>
         <a href="/logout">logout</a>
       </div>
     </nav>
     <main class="flex justify-center mt-12">
       <h3>User feed</h3>
     </main>
+    <div class="postModal">
+      <div class="content">
+        <span class="close">&times</span>
+        <h3>Create Post</h3>
+        <p>Some text in the Modal..</p>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>

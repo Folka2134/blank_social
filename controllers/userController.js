@@ -6,4 +6,11 @@ module.exports = {
       console.log(error);
     }
   },
+  getCreatePost: async (req, res) => {
+    try {
+      res.render("createPost.ejs");
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
