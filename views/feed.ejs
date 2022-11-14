@@ -29,11 +29,11 @@
         <span class="close font-bold text-2xl float-right">&times</span>
         <form
           class="flex flex-col items-center"
-          action="/createPost"
+          action="/feed/createPost"
           method="POST"
         >
           <input id="img_upload" class="self-start" type="file" name="image" />
-          <img id="img_preview" src="#" alt="your image" />
+          <img id="img_preview" src="#" alt="your image" name="image" />
           <input
             class="w-full my-6 border-2 border-gray-400"
             type="text"
