@@ -13,4 +13,17 @@ module.exports = {
       console.log(error);
     }
   },
+  createPost: async (req, res) => {
+    try {
+      await Todo.create({
+        caption: req.body.caption,
+        image: req.body.image,
+        userId: req.user.id,
+      });
+      console.log("Todo has been added!");
+      res.redirect("/todos");
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
