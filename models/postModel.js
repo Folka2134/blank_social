@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
 
-const userSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
   image: {
     require: true,
     type: String,
@@ -14,5 +13,6 @@ const userSchema = new mongoose.Schema({
     require: true,
     type: String,
   },
-  timestamps: true,
 });
+
+module.exports = mongoose.model("Posts", postSchema);
