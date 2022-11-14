@@ -34,6 +34,11 @@ app.use(
   })
 );
 
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+require("./config/passport")(passport);
+
 // Routes
 app.use("/", homeRoutes);
 app.use("/feed", userRoutes);
