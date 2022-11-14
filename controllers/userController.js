@@ -1,3 +1,5 @@
+const Post = require("../models/postModel");
+
 module.exports = {
   getFeedPage: async (req, res) => {
     try {
@@ -15,13 +17,13 @@ module.exports = {
   },
   createPost: async (req, res) => {
     try {
-      await Todo.create({
-        caption: req.body.caption,
+      await Post.create({
         image: req.body.image,
+        caption: req.body.caption,
         userId: req.user.id,
       });
-      console.log("Todo has been added!");
-      res.redirect("/todos");
+      console.log("Post has been added!");
+      res.redirect("/feed");
     } catch (err) {
       console.log(err);
     }
