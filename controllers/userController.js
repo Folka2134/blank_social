@@ -4,7 +4,6 @@ module.exports = {
   getFeedPage: async (req, res) => {
     try {
       const postItems = await Post.find();
-      console.log(postItems);
       res.render("feed.ejs", {
         posts: postItems,
         user: req.user,
