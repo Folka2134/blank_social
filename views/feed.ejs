@@ -19,6 +19,12 @@
     </nav>
     <main class="flex flex-col items-center h-screen pt-12">
       <h3>User feed</h3>
+      <% for(let i=0; i < posts.length; i++) {%>
+      <div class="posts" data-id="<%= posts[i]._id %>">
+        <span class="post-text"><%= posts[i].caption %></span>
+        <span class="delete">[X]</span>
+      </div>
+      <% } %>
     </main>
 
     <!-- CREATE NEW POST MODAL -->
