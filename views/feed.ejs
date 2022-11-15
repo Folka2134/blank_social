@@ -22,6 +22,8 @@
       <% for(let i=0; i < posts.length; i++) {%>
       <div class="posts" data-id="<%= posts[i]._id %>">
         <span class="post-text"><%= posts[i].caption %></span>
+        <span class="like">Like</span>
+        <!-- Display delete button if user_id is same -->
         <span class="delete">[X]</span>
       </div>
       <% } %>
