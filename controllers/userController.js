@@ -35,16 +35,15 @@ module.exports = {
   },
   addLike: async (req, res) => {
     try {
-      await Post.updateOne(
+      await Post.findOneAndUpdate(
         {
-          image: req.body.image,
+          userId: req.user.id,
           caption: req.body.caption,
           likes: req.body.likes,
-          userId: req.user.id,
         },
         {
           $set: {
-            likes: request.body.likesS + 1,
+            likes: req.body.likes + 1,
           },
         }
       );
