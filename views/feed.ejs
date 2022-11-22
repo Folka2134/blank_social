@@ -18,13 +18,16 @@
       </div>
     </nav>
     <main class="flex flex-col items-center h-screen pt-12">
-      <h3>User feed</h3>
       <% for(let i=0; i < posts.length; i++) {%>
-      <div class="posts" data-id="<%= posts[i]._id %>">
+      <div class="posts flex flex-col" data-id="<%= posts[i]._id %>">
+        <span class="userId text-purple-600"><%= posts[i].userId %></span>
         <span class="post-text"><%= posts[i].caption %></span>
-        <span class="like">Like</span>
+        <div>
+          <span class="likes"><%= posts[i].likes %></span>
+          <span class="like">Like</span>
+        </div>
         <!-- Display delete button if user_id is same -->
-        <span class="delete">[X]</span>
+        <!-- <span class="delete">[X]</span> -->
       </div>
       <% } %>
     </main>
