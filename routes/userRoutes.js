@@ -14,4 +14,10 @@ userRoutes.get("/", userController.getFeedPage);
 
 userRoutes.post("/createPost", userController.createPost);
 
+/* 
+  PUT
+*/
+
+userRoutes.put("/addLike/:id", userController.addLike);
+
 module.exports = userRoutes;
