@@ -7,7 +7,7 @@ const flash = require("express-flash");
 const ejs = require("ejs");
 const connectDB = require("./config/database");
 const homeRoutes = require("./routes/homeRoutes");
-const userRoutes = require("./routes/userRoutes");
+const postRoutes = require("./routes/postRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -41,7 +41,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/", homeRoutes);
-app.use("/posts", userRoutes);
+app.use("/posts", postRoutes);
 
 app.listen(PORT, () => {
   console.log(`server running on PORT:${PORT}`);
