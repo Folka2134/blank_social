@@ -13,9 +13,17 @@ const postSchema = new mongoose.Schema({
     require: true,
     type: Number,
   },
-  userId: {
+  createdBy: {
     require: true,
     type: String,
+  },
+  createdAt: {
+    require: true,
+    type: Date,
+  },
+  deleted: {
+    require: true,
+    type: Boolean,
   },
 });
 

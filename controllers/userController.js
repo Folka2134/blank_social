@@ -25,7 +25,9 @@ module.exports = {
         image: req.body.image,
         caption: req.body.caption,
         likes: 0,
-        userId: req.user.id,
+        createdBy: req.user.id,
+        createdAt: new Date(),
+        deleted: false,
       });
       console.log("Post has been added!");
       res.redirect("/feed");
