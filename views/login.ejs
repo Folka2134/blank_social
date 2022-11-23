@@ -7,23 +7,28 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Document</title>
   </head>
-  <body>
-    <main class="h-screen w-full flex justify-center items-center">
-      <div class="p-32 border-2 border-gray-200">
-        <h3 class="text-red-600 text-3xl">Login</h3>
+  <body class="font-[Helvetica]">
+    <main class="h-screen w-full flex justify-center items-center bg-[#FDFDFD]">
+      <div class="p-32 shadow-lg bg-[#F5B900]">
+        <h3 class="text-black text-3xl mb-5">Login</h3>
         <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
         %>
-        <div class="alert alert-danger text-red-500"><%= el.msg %></div>
+        <div class="alert alert-danger text-red-500 mb-2"><%= el.msg %></div>
         <% }) %> <% } %> <% if (locals.messages.info) { %> <%
         messages.info.forEach( el => { %>
-        <div class="alert alert-danger text-red-500"><%= el.msg %></div>
+        <div class="alert alert-danger text-red-500 mb-2"><%= el.msg %></div>
         <% }) %> <% } %>
-        <div class="flex justify-evenly mt-8">
+        <div class="flex justify-evenly">
           <form action="/login" method="POST" class="mb-5">
-            <input type="text" name="email" placeholder="email" />
+            <input
+              class="appearance-none"
+              type="text"
+              name="email"
+              placeholder="email"
+            />
             <input type="text" name="password" placeholder="password" />
             <input
-              class="border-2 border-grey-200 p-1 px-3 hover:border-green-300 hover:cursor-pointer rounded-md transition-colors"
+              class="bg-[#FDFDFD] active:bg-green-300 border-2 border-grey-200 p-1 px-3 hover:border-green-300 hover:cursor-pointer rounded-md transition-colors"
               type="submit"
               value="Submit"
             />
