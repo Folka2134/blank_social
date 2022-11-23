@@ -6,6 +6,11 @@ module.exports = {
     "./views/**/*.{js,jsx,ts,tsx,ejs}",
   ],
   theme: {
+    theme: {
+      fontFamily: {
+        helvetica: ["Helvetica Neue"],
+      },
+    },
     extend: {},
   },
   plugins: [],
