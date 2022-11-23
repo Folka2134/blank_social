@@ -9,12 +9,21 @@
   </head>
   <body class="flex flex-col">
     <nav
-      class="absolute flex justify-between items-center h-12 w-screen px-12 bg-purple-500"
+      class="absolute flex justify-between items-center h-12 w-screen px-12 text-white bg-[#F5B900]"
     >
-      <h1>Blank Social</h1>
+      <h1 class="text-black">Blank Social</h1>
       <div>
-        <button class="mr-2 openModal" id="">Create Post</button>
-        <a href="/logout">logout</a>
+        <button
+          class="mr-2 openModal hover:text-black transition-colors duration-500"
+          id=""
+        >
+          Create Post
+        </button>
+        <a
+          href="/logout"
+          class="hover:text-black transition-colors duration-500"
+          >logout</a
+        >
       </div>
     </nav>
     <main class="flex flex-col items-center h-screen pt-20">
