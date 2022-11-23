@@ -9,7 +9,9 @@
   </head>
   <body class="font-[Helvetica]">
     <main class="h-screen w-full flex justify-center items-center bg-[#FDFDFD]">
-      <div class="p-32 shadow-lg bg-[#F5B900]">
+      <div
+        class="h-[400px] w-[450px] flex flex-col justify-center items-center shadow-lg bg-[#F5B900]"
+      >
         <h3 class="text-black text-3xl mb-5">Login</h3>
         <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
         %>
@@ -18,15 +20,20 @@
         messages.info.forEach( el => { %>
         <div class="alert alert-danger text-red-500 mb-2"><%= el.msg %></div>
         <% }) %> <% } %>
-        <div class="flex justify-evenly">
-          <form action="/login" method="POST" class="mb-5">
+        <div class="">
+          <form action="/login" method="POST" class="flex flex-col mb-5">
             <input
-              class="appearance-none"
+              class="m-1 p-2"
               type="text"
               name="email"
               placeholder="email"
             />
-            <input type="text" name="password" placeholder="password" />
+            <input
+              class="m-1 mt-0 p-2"
+              type="text"
+              name="password"
+              placeholder="password"
+            />
             <input
               class="bg-[#FDFDFD] active:bg-green-300 border-2 border-grey-200 p-1 px-3 hover:border-green-300 hover:cursor-pointer rounded-md transition-colors"
               type="submit"
