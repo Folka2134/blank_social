@@ -64,7 +64,7 @@ module.exports = {
             if (err) {
               return next(err);
             }
-            res.redirect("/feed");
+            res.redirect("/posts");
           });
         });
       }
@@ -99,7 +99,7 @@ module.exports = {
           return next(err);
         }
         req.flash("success", { msg: "Success! You are logged in." });
-        res.redirect(req.session.returnTo || "/feed");
+        res.redirect(req.session.returnTo || "/posts");
       });
     })(req, res, next);
   },

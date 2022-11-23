@@ -41,7 +41,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/", homeRoutes);
-app.use("/feed", userRoutes);
+app.use("/posts", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`server running on PORT:${PORT}`);

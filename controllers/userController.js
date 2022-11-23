@@ -6,7 +6,6 @@ module.exports = {
       const postItems = await Post.find();
       res.render("feed.ejs", {
         posts: postItems,
-        user: req.user,
       });
     } catch (error) {
       console.log(error);
@@ -30,7 +29,7 @@ module.exports = {
         deleted: false,
       });
       console.log("Post has been added!");
-      res.redirect("/feed");
+      res.redirect("/posts");
     } catch (err) {
       console.log(err);
     }
@@ -50,7 +49,7 @@ module.exports = {
         }
       );
 
-      res.redirect("/feed");
+      res.redirect("/posts");
     } catch (err) {
       console.log(err);
     }
