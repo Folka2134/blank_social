@@ -32,21 +32,27 @@ likeText.forEach((element) => {
 });
 
 async function addLike() {
-  const userId = this.parentNode.parentNode.childNodes[1].textContent;
-  const caption = this.parentNode.parentNode.childNodes[3].textContent;
-  const likes = Number(this.parentNode.childNodes[1].innerText);
+  const createdBy = this.parentNode.parentNode.childNodes[3].textContent;
+  const caption = this.parentNode.parentNode.childNodes[5].textContent;
+  const likes = Number(
+    this.parentNode.parentNode.childNodes[7].childNodes[1].textContent
+  );
 
+  console.log(createdBy);
+  console.log(caption);
+  console.log(likes);
   try {
     const reponse = await fetch("feed/addLike", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        userId: userId,
+        createdBy: createdBy,
         caption: caption,
         likes: likes,
       }),
     });
     const data = await reponse.json();
+    console.log(data);
     location.reload();
   } catch (error) {
     console.log(error);

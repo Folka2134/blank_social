@@ -39,7 +39,7 @@ module.exports = {
     try {
       await Post.findOneAndUpdate(
         {
-          userId: req.user.id,
+          createdBy: req.body.createdBy,
           caption: req.body.caption,
           likes: req.body.likes,
         },
@@ -49,7 +49,7 @@ module.exports = {
           },
         }
       );
-      console.log("Post likes has been updated!");
+
       res.redirect("/feed");
     } catch (err) {
       console.log(err);

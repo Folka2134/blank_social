@@ -18,6 +18,6 @@ userRoutes.post("/createPost", userController.createPost);
   PUT
 */
 
-userRoutes.put("/addLike/:id", userController.addLike);
+userRoutes.put("/addLike", userController.addLike);
 
 module.exports = userRoutes;
