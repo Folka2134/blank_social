@@ -11,13 +11,6 @@ module.exports = {
       console.log(error);
     }
   },
-  getCreatePost: async (req, res) => {
-    try {
-      res.render("createPost.ejs");
-    } catch (error) {
-      console.log(error);
-    }
-  },
   createPost: async (req, res) => {
     try {
       await Post.create({
@@ -29,7 +22,7 @@ module.exports = {
         deleted: false,
       });
       console.log("Post has been added!");
-      res.redirect("/posts");
+      res.redirect("/feed");
     } catch (err) {
       console.log(err);
     }
@@ -49,7 +42,7 @@ module.exports = {
         }
       );
 
-      res.redirect("/posts");
+      res.redirect("/feed");
     } catch (err) {
       console.log(err);
     }
