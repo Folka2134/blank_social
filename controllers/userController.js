@@ -55,21 +55,4 @@ module.exports = {
       console.log(err);
     }
   },
-
-  //   app.put('/addOneLike', (request, response) => {
-  //     db.collection('rappers').updateOne({stageName: request.body.stageNameS, birthName: request.body.birthNameS,likes: request.body.likesS},{
-  //         $set: {
-  //             likes:request.body.likesS + 1
-  //           }
-  //     },{
-  //         sort: {_id: -1},
-  //         upsert: true
-  //     })
-  //     .then(result => {
-  //         console.log('Added One Like')
-  //         response.json('Like Added')
-  //     })
-  //     .catch(error => console.error(error))
-
-  // })
 };
