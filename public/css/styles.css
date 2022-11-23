@@ -571,6 +571,9 @@ video {
 .w-\[350px\] {
   width: 350px;
 }
+.w-\[400px\] {
+  width: 400px;
+}
 @keyframes ping {
 
   75%, 100% {
@@ -598,6 +601,9 @@ video {
 .flex-col {
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .items-center {
   align-items: center;
 }
@@ -616,8 +622,17 @@ video {
 .self-center {
   align-self: center;
 }
+.whitespace-normal {
+  white-space: normal;
+}
 .whitespace-nowrap {
   white-space: nowrap;
+}
+.whitespace-pre {
+  white-space: pre;
+}
+.whitespace-pre-line {
+  white-space: pre-line;
 }
 .whitespace-pre-wrap {
   white-space: pre-wrap;
@@ -975,6 +990,10 @@ video {
   .md\:w-\[500px\] {
     width: 500px;
   }
+
+  .md\:w-\[550px\] {
+    width: 550px;
+  }
 }
 
 
@@ -983,5 +1002,9 @@ video {
 
   .lg\:w-\[700px\] {
     width: 700px;
+  }
+
+  .lg\:w-\[750px\] {
+    width: 750px;
   }
 }
