@@ -3,6 +3,7 @@ const homeRoutes = express.Router();
 const homeController = require("../controllers/homeController.js");
 const authController = require("../controllers/auth.js");
 const postsController = require("../controllers/postsController.js");
+const { ensureAuth } = require("../middleware/auth");
 
 /*
   GET
@@ -12,7 +13,7 @@ homeRoutes.get("/", homeController.getHomePage);
 homeRoutes.get("/login", authController.getLoginPage);
 homeRoutes.get("/signup", authController.getSignupPage);
 homeRoutes.get("/logout", authController.logout);
-homeRoutes.get("/feed", postsController.getFeedPage);
+homeRoutes.get("/feed", ensureAuth, postsController.getFeedPage);
 
 /*
   POST
