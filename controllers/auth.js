@@ -1,9 +1,13 @@
+const { info } = require("autoprefixer");
 const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/userModel");
 
 module.exports = {
   getLoginPage: async (req, res) => {
+    if (req.user) {
+      return res.redirect("/feed");
+    }
     try {
       res.render("login.ejs");
     } catch (error) {
