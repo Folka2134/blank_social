@@ -1,48 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>Document</title>
-  </head>
-  <body class="font-[Helvetica]">
-    <main class="h-screen w-full flex justify-center items-center bg-[#FDFDFD]">
-      <div
-        class="h-[400px] w-[450px] flex flex-col justify-center items-center shadow-lg bg-[#F5B900]"
-      >
-        <h3 class="text-black text-3xl mb-5">Login</h3>
-        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
-        %>
-        <div class="alert alert-danger text-red-500 mb-2"><%= el.msg %></div>
-        <% }) %> <% } %> <% if (locals.messages.info) { %> <%
-        messages.info.forEach( el => { %>
-        <div class="alert alert-danger text-red-500 mb-2"><%= el.msg %></div>
-        <% }) %> <% } %>
-        <div class="">
-          <form action="/login" method="POST" class="flex flex-col mb-5">
-            <input
-              class="m-1 p-2"
-              type="text"
-              name="email"
-              placeholder="email"
-            />
-            <input
-              class="m-1 mt-0 p-2"
-              type="password"
-              name="password"
-              placeholder="password"
-            />
-            <input
-              class="bg-[#FDFDFD] active:bg-green-300 border-2 border-grey-200 p-1 px-3 hover:border-green-300 hover:cursor-pointer rounded-md transition-colors"
-              type="submit"
-              value="Submit"
-            />
-          </form>
-        </div>
-        <a class="hover:animate-pulse duration-75" href="/">back</a>
-      </div>
-    </main>
-  </body>
-</html>
+<%- include('partials/header') -%>
+<main class="h-screen w-full flex justify-center items-center bg-[#FDFDFD]">
+  <div
+    class="h-[400px] w-[450px] flex flex-col justify-center items-center shadow-lg bg-[#F5B900]"
+  >
+    <h3 class="text-black text-3xl mb-5">Login</h3>
+    <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+    <div class="alert alert-danger text-red-500 mb-2"><%= el.msg %></div>
+    <% }) %> <% } %> <% if (locals.messages.info) { %> <% messages.info.forEach(
+    el => { %>
+    <div class="alert alert-danger text-red-500 mb-2"><%= el.msg %></div>
+    <% }) %> <% } %>
+    <div class="">
+      <form action="/login" method="POST" class="flex flex-col mb-5">
+        <input class="m-1 p-2" type="text" name="email" placeholder="email" />
+        <input
+          class="m-1 mt-0 p-2"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+        <input
+          class="bg-[#FDFDFD] active:bg-green-300 border-2 border-grey-200 p-1 px-3 hover:border-green-300 hover:cursor-pointer rounded-md transition-colors"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+    <a class="hover:animate-pulse duration-75" href="/">back</a>
+  </div>
+</main>
+<%- include('partials/footer') -%>
