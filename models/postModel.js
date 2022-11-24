@@ -20,6 +20,7 @@ const postSchema = new mongoose.Schema({
   createdAt: {
     require: true,
     type: Date,
+    default: Date.now,
   },
   deleted: {
     require: true,

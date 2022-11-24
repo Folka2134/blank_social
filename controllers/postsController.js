@@ -18,7 +18,6 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         createdBy: req.user.id,
-        createdAt: new Date(),
         deleted: false,
       });
       console.log("Post has been added!");
