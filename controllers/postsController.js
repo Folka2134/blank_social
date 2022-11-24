@@ -3,9 +3,9 @@ const Post = require("../models/postModel");
 module.exports = {
   getFeedPage: async (req, res) => {
     try {
-      const postItems = await Post.find();
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
       res.render("feed.ejs", {
-        posts: postItems,
+        post: posts,
       });
     } catch (error) {
       console.log(error);
@@ -28,20 +28,15 @@ module.exports = {
     }
   },
   addLike: async (req, res) => {
+    // console.log(req.params.id);
+    // res.redirect("/feed");
     try {
       await Post.findOneAndUpdate(
+        { _id: req.params.id },
         {
-          createdBy: req.body.createdBy,
-          caption: req.body.caption,
-          likes: req.body.likes,
-        },
-        {
-          $set: {
-            likes: req.body.likes + 1,
-          },
+          $inc: { likes: 1 },
         }
       );
-
       res.redirect("/feed");
     } catch (err) {
       console.log(err);
