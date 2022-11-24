@@ -3,9 +3,12 @@ const Post = require("../models/postModel");
 module.exports = {
   getFeedPage: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      const posts = await Post.find({ deleted: false })
+        .sort({ createdAt: "desc" })
+        .lean();
       res.render("feed.ejs", {
         posts: posts,
+        user: req.user,
       });
     } catch (error) {
       console.log(error);
@@ -34,6 +37,16 @@ module.exports = {
           $inc: { likes: 1 },
         }
       );
+      res.redirect("/feed");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  deletePost: async (req, res) => {
+    try {
+      let post = await Post.findById({ _id: req.params.id });
+      await Post.deleteOne({ _id: req.params.id });
+      console.log("deletedPost");
       res.redirect("/feed");
     } catch (err) {
       console.log(err);

@@ -38,6 +38,17 @@
             like
           </button>
         </form>
+        <% if(posts[i].createdBy === user.id) {%>
+        <form
+          class="col-1"
+          action="/posts/deletePost/<%= posts[i]._id %>?_method=PUT"
+          method="POST"
+        >
+          <button class="btn btn-primary fa fa-heart" type="submit">
+            DELETE
+          </button>
+        </form>
+        <%}%>
       </div>
       <!-- Display delete button if user_id is same -->
       <!-- <span class="delete">[X]</span> -->

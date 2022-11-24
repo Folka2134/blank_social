@@ -19,5 +19,6 @@ userRoutes.post("/createPost", postsController.createPost);
 */
 
 userRoutes.post("/addLike/:id", postsController.addLike);
+userRoutes.post("/deletePost/:id", postsController.deletePost);
 
 module.exports = userRoutes;
