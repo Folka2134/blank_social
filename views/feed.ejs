@@ -30,17 +30,25 @@
       </div>
     </nav>
     <main class="flex flex-col items-center h-screen pt-20">
-      <% for(let i=posts.length -1; i >= 0; i--) {%>
+      <% for(let i=post.length -1; i >= 0; i--) {%>
       <div
         class="posts flex flex-col w-[350px] md:w-[500px] lg:w-[700px] m-3 p-12 border-2 border-gray-200"
-        data-id="<%= posts[i]._id %>"
+        data-id="<%= post[i]._id %>"
       >
-        <img src="<%= posts[i].image %>" alt="" />
-        <span class="userId text-purple-600"><%= posts[i].createdBy %></span>
-        <span class="post-text"><%= posts[i].caption %></span>
+        <!-- <img src="<%= post[i].image %>" alt="" /> -->
+        <span class="userId text-purple-600"><%= post[i].createdBy %></span>
+        <span class="post-text"><%= post[i].caption %></span>
         <div>
-          <span class="likes"><%= posts[i].likes %></span>
-          <span class="like">Like</span>
+          <span class="likes">likes: <%= post[i].likes %></span>
+          <form
+            class="col-1"
+            action="/posts/addLike/<%= post[i]._id %>?_method=PUT"
+            method="POST"
+          >
+            <button class="btn btn-primary fa fa-heart" type="submit">
+              like
+            </button>
+          </form>
         </div>
         <!-- Display delete button if user_id is same -->
         <!-- <span class="delete">[X]</span> -->
@@ -56,7 +64,7 @@
         <span class="close font-bold text-2xl float-right">&times</span>
         <form
           class="flex flex-col items-center"
-          action="/feed/createPost"
+          action="/posts/createPost"
           method="POST"
         >
           <input id="img_upload" class="" type="file" name="image" />

@@ -42,7 +42,7 @@ async function addLike() {
   console.log(caption);
   console.log(likes);
   try {
-    const reponse = await fetch("feed/addLike", {
+    const reponse = await fetch("posts/addLike", {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
