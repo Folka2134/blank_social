@@ -30,19 +30,19 @@
       </div>
     </nav>
     <main class="flex flex-col items-center h-screen pt-20">
-      <% for(let i=0; i < post.length; i++) {%>
+      <% for(let i=0; i < posts.length; i++) {%>
       <div
         class="posts flex flex-col w-[350px] md:w-[500px] lg:w-[700px] m-3 p-12 border-2 border-gray-200"
-        data-id="<%= post[i]._id %>"
+        data-id="<%= posts[i]._id %>"
       >
-        <!-- <img src="<%= post[i].image %>" alt="" /> -->
-        <span class="userId text-purple-600"><%= post[i].createdBy %></span>
-        <span class="post-text"><%= post[i].caption %></span>
+        <!-- <img src="<%= posts[i].image %>" alt="" /> -->
+        <span class="userId text-purple-600"><%= posts[i].createdBy %></span>
+        <span class="post-text"><%= posts[i].caption %></span>
         <div>
-          <span class="likes">likes: <%= post[i].likes %></span>
+          <span class="likes">likes: <%= posts[i].likes %></span>
           <form
             class="col-1"
-            action="/posts/addLike/<%= post[i]._id %>?_method=PUT"
+            action="/posts/addLike/<%= posts[i]._id %>?_method=PUT"
             method="POST"
           >
             <button class="btn btn-primary fa fa-heart" type="submit">

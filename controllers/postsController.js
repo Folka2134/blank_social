@@ -5,7 +5,7 @@ module.exports = {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
       res.render("feed.ejs", {
-        post: posts,
+        posts: posts,
       });
     } catch (error) {
       console.log(error);
