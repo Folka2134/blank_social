@@ -27,8 +27,6 @@ module.exports = {
     }
   },
   addLike: async (req, res) => {
-    // console.log(req.params.id);
-    // res.redirect("/feed");
     try {
       await Post.findOneAndUpdate(
         { _id: req.params.id },
