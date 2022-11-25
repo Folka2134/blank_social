@@ -3,7 +3,7 @@ const createPostBtn = document.querySelector(".openModal");
 const closeBtn = document.querySelector(".close");
 const body = document.querySelector("main");
 const nav = document.querySelector("nav");
-const imgInput = document.querySelector("#img_upload");
+const imgInput = document.querySelector("#image_upload");
 // const likeText = document.querySelectorAll(".like");
 
 createPostBtn.addEventListener("click", () => {
