@@ -1,7 +1,7 @@
 <%- include('partials/header') -%>
 <div class="flex flex-col">
   <nav
-    class="absolute flex justify-between items-center h-12 w-screen px-12 text-white bg-[#F5B900]"
+    class="sticky top-0 flex justify-between items-center h-12 w-screen px-12 text-white bg-[#F5B900]"
   >
     <h1 class="text-black text-xl">
       <span class="animate-[pulse_5s_ease-in-out_infinite]">Blank </span>Social
@@ -18,7 +18,7 @@
       >
     </div>
   </nav>
-  <main class="flex flex-col items-center h-screen pt-20">
+  <main class="flex flex-col items-center h-screen w-screen pt-20">
     <% for(let i=0; i < posts.length; i++) {%>
     <div
       class="posts flex flex-col w-[350px] md:w-[500px] lg:w-[700px] m-3 p-12 border-2 border-gray-200"
