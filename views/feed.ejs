@@ -18,13 +18,15 @@
       >
     </div>
   </nav>
-  <main class="flex flex-col items-center h-screen w-screen pt-20">
+
+  <!-- POSTS -->
+  <main class="flex flex-col items-center h-screen w-screen pt-16">
     <% for(let i=0; i < posts.length; i++) {%>
     <div
-      class="posts flex flex-col w-[350px] md:w-[500px] lg:w-[700px] m-3 p-12 border-2 border-gray-200"
+      class="posts flex flex-col w-[350px] md:w-[500px] lg:w-[700px] m-3 p-6 border-2 border-black"
       data-id="<%= posts[i]._id %>"
     >
-      <!-- <img src="<%= posts[i].image %>" alt="" /> -->
+      <img src="<%= posts[i].image %>" alt="" />
       <span class="userId text-purple-600"><%= posts[i].createdBy %></span>
       <span class="post-text"><%= posts[i].caption %></span>
       <div>
@@ -38,6 +40,7 @@
             like
           </button>
         </form>
+
         <% if(posts[i].createdBy === user.id) {%>
         <form
           class="col-1"
@@ -50,8 +53,6 @@
         </form>
         <%}%>
       </div>
-      <!-- Display delete button if user_id is same -->
-      <!-- <span class="delete">[X]</span> -->
     </div>
     <% } %>
   </main>
@@ -65,9 +66,18 @@
       <form
         class="flex flex-col items-center"
         action="/posts/createPost"
+        enctype="multipart/form-data"
         method="POST"
       >
-        <input id="img_upload" class="" type="file" name="image" />
+        <div class="mb-3">
+          <label for="imgUpload" class="form-label">Image</label>
+          <input
+            type="file"
+            class="form-control"
+            id="imageUpload"
+            name="file"
+          />
+        </div>
         <img id="img_preview" src="#" alt="your image" name="image" />
         <input
           class="w-full my-6 border-2 border-gray-400"

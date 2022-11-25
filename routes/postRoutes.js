@@ -1,5 +1,7 @@
 const express = require("express");
 const userRoutes = express.Router();
+
+const upload = require("../middleware/multer");
 const postsController = require("../controllers/postsController.js");
 
 /*
@@ -12,7 +14,11 @@ userRoutes.get("/", postsController.getFeedPage);
   POST
 */
 
-userRoutes.post("/createPost", postsController.createPost);
+userRoutes.post(
+  "/createPost",
+  upload.single("file"),
+  postsController.createPost
+);
 
 /* 
   PUT

@@ -5,6 +5,10 @@ const postSchema = new mongoose.Schema({
     require: true,
     type: String,
   },
+  cloudinaryId: {
+    require: true,
+    type: String,
+  },
   caption: {
     require: true,
     type: String,
