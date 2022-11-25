@@ -1,7 +1,7 @@
 <%- include('partials/header') -%>
 <div class="flex flex-col">
   <nav
-    class="sticky top-0 flex justify-between items-center h-12 w-screen px-12 text-white bg-[#F5B900]"
+    class="sticky top-0 flex justify-between items-center h-12 w-screen px-12 text-white bg-[#FCA311]"
   >
     <h1 class="text-black text-xl">
       <span class="animate-[pulse_5s_ease-in-out_infinite]">Blank </span>Social
@@ -23,35 +23,39 @@
   <main class="flex flex-col items-center h-screen w-screen pt-16">
     <% for(let i=0; i < posts.length; i++) {%>
     <div
-      class="posts flex flex-col w-[350px] md:w-[500px] lg:w-[700px] m-3 p-6 border-2 border-black"
+      class="posts flex flex-col w-[350px] md:w-[500px] lg:w-[700px] m-3 p-6 bg-white border-2 border-[#14213D]"
       data-id="<%= posts[i]._id %>"
     >
       <img src="<%= posts[i].image %>" alt="" />
-      <span class="userId text-purple-600"><%= posts[i].createdBy %></span>
-      <span class="post-text"><%= posts[i].caption %></span>
-      <div>
-        <span class="likes">likes: <%= posts[i].likes %></span>
-        <form
-          class="col-1"
-          action="/posts/addLike/<%= posts[i]._id %>?_method=PUT"
-          method="POST"
-        >
-          <button class="btn btn-primary fa fa-heart" type="submit">
-            like
-          </button>
-        </form>
+      <div class="flex justify-between mt-2">
+        <div class="flex flex-col">
+          <span class="userId text-purple-600"><%= posts[i].createdBy %></span>
+          <span class="post-text"><%= posts[i].caption %></span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="likes"><%= posts[i].likes %></span>
+          <form
+            class="col-1"
+            action="/posts/addLike/<%= posts[i]._id %>?_method=PUT"
+            method="POST"
+          >
+            <button class="btn btn-primary fa fa-heart" type="submit">
+              like
+            </button>
+          </form>
 
-        <% if(posts[i].createdBy === user.id) {%>
-        <form
-          class="col-1"
-          action="/posts/deletePost/<%= posts[i]._id %>?_method=PUT"
-          method="POST"
-        >
-          <button class="btn btn-primary fa fa-heart" type="submit">
-            DELETE
-          </button>
-        </form>
-        <%}%>
+          <% if(posts[i].createdBy === user.id) {%>
+          <form
+            class="col-1"
+            action="/posts/deletePost/<%= posts[i]._id %>?_method=PUT"
+            method="POST"
+          >
+            <button class="btn btn-primary fa fa-heart" type="submit">
+              DELETE
+            </button>
+          </form>
+          <%}%>
+        </div>
       </div>
     </div>
     <% } %>
