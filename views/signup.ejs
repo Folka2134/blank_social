@@ -1,5 +1,15 @@
 <%- include('partials/header') -%>
-<main class="h-screen w-full flex flex-col justify-center items-center">
+<div id="wrapper" class="z-0" data-configuration="1" data-roundness="1">
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+<script src="./js/shapes.js"></script>
+<main class="flex flex-col justify-center items-center z-10">
   <div class="flex flex-col p-32 border-2 border-gray-200">
     <h3 class="mb-6 text-red-600 text-3xl self-center">Sign-up</h3>
     <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
